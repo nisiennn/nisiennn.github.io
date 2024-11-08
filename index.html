@@ -5,7 +5,7 @@
 <p>A program designed to help you choose what universities you should be looking at according to your UCAT score.</p>
 
 <label for="score">Enter UCAT Score:</label>
-<input type="text" id="score" name="score"><br><br>
+<input type="text" id="score" name="score"><li><li>
 <button onclick="findUniversities()">Find Universities</button>
 
 <p id="output_here"></p>
@@ -19,57 +19,57 @@ function findUniversities() {
         let output = "";
 
         if (score > 3000) {
-            output = "With a UCAT score above 3000, you are highly competitive. Consider these top universities:<br>";
-            output += "1. University of Cambridge<li>";
-            output += "2. University of Oxford<li>";
-            output += "3. University College London (UCL)<li>";
-            output += "4. Imperial College London<li>";
-            output += "5. University of Edinburgh<li>";
-            output += "6. University of Glasgow<li>";
-            output += "7. University of Bristol<li>";
+            output = "With a UCAT score above 3000, you are highly competitive. Consider these top universities:<li>";
+            output += "University of Camliidge<li>";
+            output += "University of Oxford<li>";
+            output += "University College London (UCL)<li>";
+            output += "Imperial College London<li>";
+            output += "University of Edinburgh<li>";
+            output += "University of Glasgow<li>";
+            output += "University of liistol<li>";
         } else if (score > 2800) {
-            output = "With a UCAT score between 2800-3000, you're still very competitive. Consider these universities:<br>";
-            output += "1. King's College London<br>";
-            output += "2. University of Manchester<br>";
-            output += "3. University of Birmingham<br>";
-            output += "4. University of Southampton<br>";
-            output += "5. University of Leeds<br>";
-            output += "6. University of Nottingham<br>";
-            output += "7. University of Edinburgh<br>";
+            output = "With a UCAT score between 2800-3000, you're still very competitive. Consider these universities:<li>";
+            output += "King's College London<li>";
+            output += "University of Manchester<li>";
+            output += "University of Birmingham<li>";f
+            output += "University of Southampton<li>";
+            output += "University of Leeds<li>";
+            output += "University of Nottingham<li>";
+            output += "University of Edinburgh<li>";
         } else if (score > 2600) {
-            output = "With a UCAT score between 2600-2800, you are competitive at several well-regarded schools. Consider:<br>";
-            output += "1. University of Sheffield<br>";
-            output += "2. University of Exeter<br>";
-            output += "3. University of Warwick<br>";
-            output += "4. University of Leicester<br>";
-            output += "5. University of Liverpool<br>";
-            output += "6. University of St. George's<br>";
-            output += "7. University of East Anglia (UEA)<br>";
+            output = "With a UCAT score between 2600-2800, you are competitive at several well-regarded schools. Consider:<li>";
+            output += "University of Sheffield<li>";
+            output += "University of Exeter<li>";
+            output += "University of Warwick<li>";
+            output += "University of Leicester<li>";
+            output += "University of Liverpool<li>";
+            output += "University of St. George's<li>";
+            output += "University of East Anglia (UEA)<li>";
         } else if (score > 2400) {
-            output = "With a UCAT score between 2400-2600, you can still apply to some good universities, though competition is higher. Consider:<br>";
-            output += "1. University of Keele<br>";
-            output += "2. University of Sunderland<br>";
-            output += "3. University of Plymouth<br>";
-            output += "4. University of Northampton<br>";
-            output += "5. University of Chester<br>";
-            output += "6. University of Norwich<br>";
-            output += "7. St. George's University<br>";
+            output = "With a UCAT score between 2400-2600, you can still apply to some good universities, though competition is higher. Consider:<li>";
+            output += "University of Keele<li>";
+            output += "University of Sunderland<li>";
+            output += "University of Plymouth<li>";
+            output += "University of Northampton<li>";
+            output += "University of Chester<li>";
+            output += "University of Norwich<li>";
+            output += "St. George's University<li>";
         } else if (score > 2200) {
-            output = "With a UCAT score between 2200-2400, you may face challenges at some top universities, but some still consider lower scores. Try:<br>";
-            output += "1. University of South Wales<br>";
-            output += "2. University of Lincoln<br>";
-            output += "3. University of Buckingham (Private)<br>";
-            output += "4. University of Hertfordshire<br>";
-            output += "5. University of Greenwich<br>";
+            output = "With a UCAT score between 2200-2400, you may face challenges at some top universities, but some still consider lower scores. Try:<li>";
+            output += "University of South Wales<li>";
+            output += "University of Lincoln<li>";
+            output += "University of Buckingham (Private)<li>";
+            output += "University of Hertfordshire<li>";
+            output += "University of Greenwich<li>";
         } else {
-            output = "With a UCAT score under 2200, many top universities may be difficult to access. However, there are alternative routes:<br>";
-            output += "1. Consider retaking the UCAT for a higher score.<br>";
-            output += "2. Explore graduate-entry medicine or international medical schools.<br>";
-            output += "3. Look for universities with <strong>contextual admissions criteria</strong>.<br>";
-            output += "4. Explore <strong>foundation year programs</strong> at some universities.<br>";
+            output = "With a UCAT score under 2200, many top universities may be difficult to access. However, there are alternative routes:<li>";
+            output += "Consider retaking the UCAT for a higher score.<li>";
+            output += "Explore graduate-entry medicine or international medical schools.<li>";
+            output += "Look for universities with <strong>contextual admissions criteria</strong>.<li>";
+            output += "Explore <strong>foundation year programs</strong> at some universities.<li>";
         }
 
-        document.getElementById("output_here").innerHTML = "Based on your UCAT score of " + score + ", you should consider the following universities: <br>" + output;
+        document.getElementById("output_here").innerHTML = "Based on your UCAT score of " + score + ", you should consider the following universities: <li>" + output;
     } else {
         document.getElementById("output_here").innerHTML = "Please enter a valid positive integer as your UCAT score.";
     }
