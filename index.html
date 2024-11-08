@@ -2,11 +2,79 @@
 <html>
 <body>
 <h1>Nisien's MedMatchMaker</h1>
-<p>A program designed to help you choose what universities you should be looking at in line with your UCAT score.</p>
-<form id="form" action="/action_page.php">
-    <label for="score">UCAT Score:</label>
-    <input type="text" id="score" name="score"><br><br>
-    <input type="submit" id="submit" name="Submit" value="Find Universities">
-</form>
+<p>A program designed to help you choose what universities you should be looking at according to your UCAT score.</p>
+
+<label for="score">Enter UCAT Score:</label>
+<input type="text" id="score" name="score"><br><br>
+<button onclick="findUniversities()">Find Universities</button>
+
+<p id="output_here"></p>
+
+<script>
+function findUniversities() {
+    let score = document.getElementById("score").value;
+    score = parseInt(score);
+
+    if (Number.isInteger(score) && score > 0) {
+        let output = "";
+
+        if (score > 3000) {
+            output = "With a UCAT score above 3000, you are highly competitive. Consider these top universities:<br>";
+            output += "1. University of Cambridge<br>";
+            output += "2. University of Oxford<br>";
+            output += "3. University College London (UCL)<br>";
+            output += "4. Imperial College London<br>";
+            output += "5. University of Edinburgh<br>";
+            output += "6. University of Glasgow<br>";
+            output += "7. University of Bristol<br>";
+        } else if (score > 2800) {
+            output = "With a UCAT score between 2800-3000, you're still very competitive. Consider these universities:<br>";
+            output += "1. King's College London<br>";
+            output += "2. University of Manchester<br>";
+            output += "3. University of Birmingham<br>";
+            output += "4. University of Southampton<br>";
+            output += "5. University of Leeds<br>";
+            output += "6. University of Nottingham<br>";
+            output += "7. University of Edinburgh<br>";
+        } else if (score > 2600) {
+            output = "With a UCAT score between 2600-2800, you are competitive at several well-regarded schools. Consider:<br>";
+            output += "1. University of Sheffield<br>";
+            output += "2. University of Exeter<br>";
+            output += "3. University of Warwick<br>";
+            output += "4. University of Leicester<br>";
+            output += "5. University of Liverpool<br>";
+            output += "6. University of St. George's<br>";
+            output += "7. University of East Anglia (UEA)<br>";
+        } else if (score > 2400) {
+            output = "With a UCAT score between 2400-2600, you can still apply to some good universities, though competition is higher. Consider:<br>";
+            output += "1. University of Keele<br>";
+            output += "2. University of Sunderland<br>";
+            output += "3. University of Plymouth<br>";
+            output += "4. University of Northampton<br>";
+            output += "5. University of Chester<br>";
+            output += "6. University of Norwich<br>";
+            output += "7. St. George's University<br>";
+        } else if (score > 2200) {
+            output = "With a UCAT score between 2200-2400, you may face challenges at some top universities, but some still consider lower scores. Try:<br>";
+            output += "1. University of South Wales<br>";
+            output += "2. University of Lincoln<br>";
+            output += "3. University of Buckingham (Private)<br>";
+            output += "4. University of Hertfordshire<br>";
+            output += "5. University of Greenwich<br>";
+        } else {
+            output = "With a UCAT score under 2200, many top universities may be difficult to access. However, there are alternative routes:<br>";
+            output += "1. Consider retaking the UCAT for a higher score.<br>";
+            output += "2. Explore graduate-entry medicine or international medical schools.<br>";
+            output += "3. Look for universities with <strong>contextual admissions criteria</strong>.<br>";
+            output += "4. Explore <strong>foundation year programs</strong> at some universities.<br>";
+        }
+
+        document.getElementById("output_here").innerHTML = "Based on your UCAT score of " + score + ", you should consider the following universities: <br>" + output;
+    } else {
+        document.getElementById("output_here").innerHTML = "Please enter a valid positive integer as your UCAT score.";
+    }
+}
+</script>
+
 </body>
 </html>
