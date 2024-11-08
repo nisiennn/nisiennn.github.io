@@ -4,6 +4,8 @@
 <h1>Nisien's UCAT Univerisity Predictor</h1>
 <p>A program designed to help you choose what universities you should be looking at according to your UCAT score.</p>
 
+<a href="https://www.ucat.ac.uk/">UCAT Website</a>
+
 <p>The UCAT is an electronic examination which includes multiple choice questions for students applying for medical or dental degrees in universities. 36 Universities across the UK take in scores from the SUAT to assist them in selecting applicants, including Oxford, Imperial and Cambridge. The exam is scored between <strong> 1200-3600 </strong> where students get a score out of 900 in 4 different criterias. A really good UCAT score can heavily assist students in aquiring the top universities in the country for medicine.</p>
 
 <label for="score">Enter UCAT Score:</label>
@@ -44,43 +46,52 @@ function findUniversities() {
 "Lincoln, in partnership with Nottingham, offers a medical program emphasising hands-on clinical training and rural health. Typical Grade Requirements: A*AA at A-level, including Chemistry and Biology.", 
 "The first independent medical school in the UK, Buckingham offers an accelerated two-year program with a strong clinical focus. Typical Grade Requirements: ABB at A-level, including Chemistry and Biology.", "Hertfordshire’s health sciences programs focus on nursing, paramedicine, and allied health, with extensive clinical placements. Typical Grade Requirements: For nursing and allied health courses, generally BBC-BBB at A-level, including relevant science subjects.", 
 "Greenwich prepares students for healthcare roles with strong programs in public health, nursing, and social care. Typical Grade Requirements: For health programs, BBC at A-level, with Biology or relevant subjects."];
+        
+        let images = ["https://cdn.tech.eu/uploads/2023/03/cambridge-474.jpg", "https://cdn.britannica.com/03/117103-050-F4C2FC83/view-University-of-Oxford-England-Oxfordshire.jpg", "https://www.ucl.ac.uk/prospectivestudents/undergraduate/sites/prospective_students_undergraduate/files/teaser-card-external/portico_welcome_sized.png", 
+        "https://accommodationforstudents.com/cdn-cgi/image/f=auto,q=85,w=1200,h=600,fit=cover/https://images.accommodationforstudents.com/website/university-guides/gb/imperial-college-london/uni.jpg",   "https://www.ed.ac.uk/sites/default/files/styles/panel_breakpoints_theme_uoe_mobile_1x/public/thumbnails/image/cam_about-us-1_old_college_0.jpg?itok=jEHMEuJe", 
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/45/1c/9d/university-of-glasgow.jpg?w=1200&h=1200&s=1", 
+        "https://oidigitalinstitute.com/wp-content/uploads/2023/04/AdobeStock_498150538-University-of-Bristol-2-scaled.jpeg"];
+        
         let output = "";
-        if (score > 3000) {
+        if (score <= 3600 && score >= 3000 ) {
         	competitiveness = "With a UCAT score of over 3000, you are in the top percentile of students who took the UCAT and can compete with the best medical students in the country. Consider:<li>";
 			for (let i = 0; i < 7; i++) {
             	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
             }
-        } else if (score > 2800) {
+        } else  if (score > 3600) {
+        	competitiveness = "chill bruh";
+            output = "";
+		} else if (score >= 2800) {
             competitiveness = "With a UCAT score between 2800-3000, you're still very competitive. Consider these universities:<li>";
             for (let i = 8; i < 15; i++) {
             	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
             }
-        } else if (score > 2600) {
+        } else if (score >= 2600) {
             competitiveness = "With a UCAT score between 2600-2800, you are competitive at several well-regarded schools. Consider:<li>";
             for (let i = 8; i < 15; i++) {
             	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
             }
-        } else if (score > 2400) {
+        } else if (score >= 2400) {
             competitiveness = "With a UCAT score between 2400-2600, you can still apply to some good universities, though competition is higher. Consider:<li>";
             for (let i = 8; i < 15; i++) {
             	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
             }
-        } else if (score > 2200) {
+        } else if (score >= 2200) {
             competitiveness = "With a UCAT score between 2200-2400, you may face challenges at some top universities, but some still consider lower scores. Try:<li>";
             for (let i = 8; i < 15; i++) {
             	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
             }
-        } else if (score > 1200) {
+        } else if (score >= 1200) {
             competitiveness = "With a UCAT score under 2200, many top universities are very difficult to get into. However, there are alternative routes:<li>";
             output += "Consider retaking the UCAT for a higher score.<li>";
             output += "Explore graduate-entry medicine or international medical schools.<li>";
             output += "Look for universities with <strong>contextual admissions criteria</strong>.<li>";
             output += "Explore <strong>foundation year programs</strong> at some universities.<li>";
         } else if (score < 1200) {
-        	competitiveness = "😹"
-            output = "🙏🙏🙏🙏"
-        }
-
+        	competitiveness = "😹";
+            output = "🙏🙏🙏🙏";
+		}
+        
         document.getElementById("output_here").innerHTML = competitiveness + output;
     } else {
         document.getElementById("output_here").innerHTML = "Please enter a valid UCAT score.";
