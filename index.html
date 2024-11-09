@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Nisien's UCAT Univerisity Predictor</h1>
+<h1>
+	<title>UCAT University Suggester</title>
+    UCAT Univerisity Predictor
+</h1>
 <p>A program designed to help you choose what universities you should be looking at according to your UCAT score.</p>
 
 <a href="https://www.ucat.ac.uk/">UCAT Website</a>
@@ -20,81 +23,101 @@ function findUniversities() {
     score = parseInt(score);
 
     if (Number.isInteger(score) && score >= 0) {
-        let universities = ["University of Cambridge", "University of Oxford", "University College London (UCL)", "Imperial College London", "University of Edinburgh", "University of Glasgow", "University of Bristol", "University of Sheffield", "University of Exeter", "University of Warwick", "University of Leicester", "University of Liverpool", "University of St. Georges", "University of East Anglia (UEA)", "University of Keele", "University of Sunderland", "University of Plymouth", "University of Northampton", "University of Chester", "University of Norwich", "St. George's University", "University of South Wales"< "University of Lincoln", "University of Buckingham (Private)", "University of Hertfordshire", "University of Greenwich"];
-        let description = ["Cambridge’s School of Clinical Medicine is globally respected, offering a rigorous six-year medical program. It emphasises research in fields such as cancer, stem cells, and neuroscience, and its proximity to Addenbrooke’s Hospital provides exceptional clinical experience. Typical Grade Requirements: AAA at A-level, including Chemistry and one other science or mathematics subject.", 
-        "Oxford’s Medical Sciences Division is one of the oldest in the world, combining rigorous study with hands-on clinical experience. Known for research in immunology and global health, Oxford prepares students for both clinical and research careers. Typical Grade Requirements: AAA at A-level, including Chemistry and one of Biology, Physics, or Mathematics.", 
-"UCL Medical School offers an innovative curriculum focused on interdisciplinary research, genetics, and infectious diseases. Its partnership with University College Hospital enhances clinical training. Typical Grade Requirements: A*AA at A-level, including Chemistry and Biology.", 
-"Imperial’s Faculty of Medicine emphasises research-led teaching, with strengths in public health, surgery, and biomedical innovation. Students gain practical experience through partnerships with hospitals like St. Mary’s. Typical Grade Requirements: A*AA at A-level, with Chemistry and Biology required.", 
-"Edinburgh Medical School combines research excellence in genetics and regenerative medicine with extensive clinical placements in partnership with local NHS trusts. Typical Grade Requirements: AAA at A-level, including Chemistry and one of Biology, Mathematics, or Physics.", 
-"Glasgow’s School of Medicine provides early clinical exposure and has research strengths in cardiology, oncology, and infectious diseases, with training in diverse healthcare environments. Typical Grade Requirements: AAA at A-level, including Chemistry and Biology.", 
-"Known for its progressive teaching methods, Bristol Medical School combines early patient contact with strengths in psychiatry, epidemiology, and surgery. Typical Grade Requirements: A*AA at A-level, including Chemistry and either Biology, Physics, or Mathematics.", 
-"Sheffield’s Medical School emphasises clinical placements and research, especially in neuroscience and oncology, preparing students for a variety of medical careers. Typical Grade Requirements: AAA at A-level, including Chemistry and another science subject.", 
-"Exeter’s College of Medicine and Health offers research-driven education with a focus on primary care and public health. Students have placements across NHS hospitals in the region. Typical Grade Requirements: AAA at A-level, including Chemistry and Biology.", 
-"Warwick Medical School offers a graduate-entry program with strengths in clinical trials and mental health, training students in a variety of NHS settings. Typical Grade Requirements (Graduate Entry): 2:1 undergraduate degree in a science subject, along with GAMSAT or UCAT.", 
-"Leicester Medical School’s patient-centred curriculum emphasises cardiovascular and genetics research. Students benefit from placements at University Hospitals of Leicester. Typical Grade Requirements:AAA at A-level, including Chemistry or Biology and one additional science.", 
-"Liverpool’s medical program is known for its focus on public health and tropical medicine, with training at the Liverpool School of Tropical Medicine. Typical Grade Requirements: AAA at A-level, including Chemistry and Biology.", 
-"St. George’s focuses on clinical practice and public health, providing placements at one of London’s largest teaching hospitals, St. George’s Hospital. Typical Grade Requirements: AAA at A-level, including Chemistry and Biology.", 
-"UEA’s Norwich Medical School has a problem-based curriculum focused on primary care and environmental health factors. Typical Grade Requirements: AAA at A-level, including Biology and one other science or mathematics subject.", 
-"Keele’s community-based medical program offers strong training in general practice and public health through partnerships with local NHS trusts. Typical Grade Requirements: A*AA or AAA at A-level, including Chemistry or Biology and a second science subject.", 
-"Sunderland’s medical program addresses healthcare needs in underserved areas, with an emphasis on general practice and community health. Typical Grade Requirements: AAA at A-level, including Chemistry or Biology and a second science.", 
-"Plymouth’s medical school emphasises applied health sciences, particularly in marine medicine and rural healthcare, with hands-on training in diverse clinical settings. Typical Grade Requirements: A*AA at A-level, including Chemistry and Biology.", 
-"While Northampton does not have a full medical school, its health programs focus on public health and social innovation, preparing students for health-related careers. Typical Grade Requirements: For allied health programs, usually BBB at A-level, including Biology or relevant science subjects.", 
-"Chester’s programs emphasise community health and practical training in mental health and primary care, with strong ties to NHS facilities. Typical Grade Requirements: For allied health courses, BBC-BBB at A-level, with Biology or relevant science subjects.", 
-"Norwich Medical School emphasises primary care and rural health, with a hands-on curriculum providing placements across NHS settings. Typical Grade Requirements: AAA at A-level, including Biology and one other science or mathematics subject.", 
-"Known for its global health approach, St. George’s University in Grenada provides placements in the UK and US and focuses on tropical medicine. Typical Grade Requirements: For the UK pathway, usually a 2:1 degree or equivalent (if applying as a graduate) or BBB-AAB at A-level, including Biology and Chemistry.", 
-"While South Wales does not offer a full medical degree, it provides strong health programs with a focus on nursing, midwifery, and community healthcare. Typical Grade Requirements: For nursing and allied health, BBC at A-level, often including Biology or a related science.", 
-"Lincoln, in partnership with Nottingham, offers a medical program emphasising hands-on clinical training and rural health. Typical Grade Requirements: A*AA at A-level, including Chemistry and Biology.", 
-"The first independent medical school in the UK, Buckingham offers an accelerated two-year program with a strong clinical focus. Typical Grade Requirements: ABB at A-level, including Chemistry and Biology.", "Hertfordshire’s health sciences programs focus on nursing, paramedicine, and allied health, with extensive clinical placements. Typical Grade Requirements: For nursing and allied health courses, generally BBC-BBB at A-level, including relevant science subjects.", 
-"Greenwich prepares students for healthcare roles with strong programs in public health, nursing, and social care. Typical Grade Requirements: For health programs, BBC at A-level, with Biology or relevant subjects."];
+        let universities = ["University of Cambridge", "University of Oxford", "University College London (UCL)", "Imperial College London", "University of Edinburgh", "University of Glasgow", "University of Bristol", "University of Sheffield", "University of Exeter", "University of Warwick", "University of Leicester", "University of Liverpool", "University of St. Andrews", "Kings College London", "University of Manchester", "University of Southampton", "Brighton and Sussex Medical School", "University of Keele", "University of Sunderland", "University of Plymouth", "University of Northampton", "University of Chester", "University of Norwich", "University of South Wales", "University of Lincoln", "University of Buckingham (Private)", "University of Hertfordshire", "University of Greenwich"];
+        let description = ["Cambridge’s School of Clinical Medicine is globally respected, offering a rigorous six-year medical program. It emphasises research in fields such as cancer, stem cells, and neuroscience, and its proximity to Addenbrooke’s Hospital provides exceptional clinical experience. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry and one other science or mathematics subject.", 
+        "Oxford’s Medical Sciences Division is one of the oldest in the world, combining rigorous study with hands-on clinical experience. Known for research in immunology and global health, Oxford prepares students for both clinical and research careers. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry and one of Biology, Physics, or Mathematics.", 
+"UCL Medical School offers an innovative curriculum focused on interdisciplinary research, genetics, and infectious diseases. Its partnership with University College Hospital enhances clinical training. <br> <strong> Typical Grade Requirements </strong>: A*AA at A-level, including Chemistry and Biology.", 
+"Imperial’s Faculty of Medicine emphasises research-led teaching, with strengths in public health, surgery, and biomedical innovation. Students gain practical experience through partnerships with hospitals like St. Mary’s. <br> <strong> Typical Grade Requirements </strong>: A*AA at A-level, with Chemistry and Biology required.", 
+"Edinburgh Medical School combines research excellence in genetics and regenerative medicine with extensive clinical placements in partnership with local NHS trusts. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry and one of Biology, Mathematics, or Physics.", 
+"Glasgow’s School of Medicine provides early clinical exposure and has research strengths in cardiology, oncology, and infectious diseases, with training in diverse healthcare environments. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry and Biology.", 
+"Known for its progressive teaching methods, Bristol Medical School combines early patient contact with strengths in psychiatry, epidemiology, and surgery. <br> <strong> Typical Grade Requirements </strong>: A*AA at A-level, including Chemistry and either Biology, Physics, or Mathematics.", 
+"Sheffield’s Medical School emphasises clinical placements and research, especially in neuroscience and oncology, preparing students for a variety of medical careers. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry and another science subject.", 
+"Exeter’s College of Medicine and Health offers research-driven education with a focus on primary care and public health. Students have placements across NHS hospitals in the region. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry and Biology.", 
+"Warwick Medical School offers a graduate-entry program with strengths in clinical trials and mental health, training students in a variety of NHS settings. <br> <strong> Typical Grade Requirements </strong> (Graduate Entry): 2:1 undergraduate degree in a science subject, along with GAMSAT or UCAT.", 
+"Leicester Medical School’s patient-centred curriculum emphasises cardiovascular and genetics research. Students benefit from placements at University Hospitals of Leicester. <br> <strong> Typical Grade Requirements </strong>:AAA at A-level, including Chemistry or Biology and one additional science.", 
+"Liverpool’s medical program is known for its focus on public health and tropical medicine, with training at the Liverpool School of Tropical Medicine. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry and Biology.", 
+"The University of St Andrews offers a highly respected medical program with a unique focus on early patient contact and a strong foundation in medical sciences. St Andrews is known for its small, close-knit community, and its innovative approach to teaching, which combines traditional learning with modern methods like simulation-based education.<br><strong>Typical Grade Requirements</strong>: AAA at A-level, including Chemistry and one other science subject (Biology, Physics, or Mathematics)", 
+"Medicine at King’s College London offers a world-renowned program that combines cutting-edge medical research with clinical practice. Located in the heart of London, the school provides students with access to leading hospitals and medical institutions. The curriculum is designed to foster a deep understanding of medical sciences while ensuring that students develop strong clinical and communication skills.<br><strong>Typical Grade Requirements</strong>: A*AA at A-level, including Chemistry and one other science subject (Biology, Physics, or Mathematics).", 
+"The University of Manchester offers a world-class medical education with an emphasis on patient-centred care, scientific innovation, and early clinical exposure. The medical school is renowned for its research in areas like cancer, genetics, and neuroscience. Typical Grade Requirements: AAA at A-level, including Chemistry and Biology.",
+"The University of Southampton provides a comprehensive medical program that focuses on both the scientific and clinical aspects of medicine. Southampton has a strong focus on public health and medical research, preparing students for a broad range of careers in medicine. <br><strong>Typical Grade Requirements</strong>: AAA at A-level, including Chemistry and Biology.",
+"Medicine at Brighton and Sussex Medical School (BSMS) offers a dynamic and innovative curriculum, focusing on early clinical exposure and problem-based learning. <br><strong>Typical Grade Requirements</strong>: AAA at A-level, including Chemistry and one other science subject (Biology, Physics, or Mathematics).",
+"Keele’s community-based medical program offers strong training in general practice and public health through partnerships with local NHS trusts. <br> <strong> Typical Grade Requirements </strong>: A*AA or AAA at A-level, including Chemistry or Biology and a second science subject.", 
+"Sunderland’s medical program addresses healthcare needs in underserved areas, with an emphasis on general practice and community health. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Chemistry or Biology and a second science.", 
+"Plymouth’s medical school emphasises applied health sciences, particularly in marine medicine and rural healthcare, with hands-on training in diverse clinical settings. <br> <strong> Typical Grade Requirements </strong>: A*AA at A-level, including Chemistry and Biology.", 
+"While Northampton does not have a full medical school, its health programs focus on public health and social innovation, preparing students for health-related careers. <br> <strong> Typical Grade Requirements </strong>: For allied health programs, usually BBB at A-level, including Biology or relevant science subjects.", 
+"Chester’s programs emphasise community health and practical training in mental health and primary care, with strong ties to NHS facilities. <br> <strong> Typical Grade Requirements </strong>: For allied health courses, BBC-BBB at A-level, with Biology or relevant science subjects.", 
+"Norwich Medical School emphasises primary care and rural health, with a hands-on curriculum providing placements across NHS settings. <br> <strong> Typical Grade Requirements </strong>: AAA at A-level, including Biology and one other science or mathematics subject.", 
+"While South Wales does not offer a full medical degree, it provides strong health programs with a focus on nursing, midwifery, and community healthcare. <br> <strong> Typical Grade Requirements </strong>: For nursing and allied health, BBC at A-level, often including Biology or a related science.", 
+"Lincoln, in partnership with Nottingham, offers a medical program emphasising hands-on clinical training and rural health. <br> <strong> Typical Grade Requirements </strong>: A*AA at A-level, including Chemistry and Biology.", 
+"The first independent medical school in the UK, Buckingham offers an accelerated two-year program with a strong clinical focus. <br> <strong> Typical Grade Requirements </strong>: ABB at A-level, including Chemistry and Biology.", "Hertfordshire’s health sciences programs focus on nursing, paramedicine, and allied health, with extensive clinical placements. <br> <strong> Typical Grade Requirements </strong>: For nursing and allied health courses, generally BBC-BBB at A-level, including relevant science subjects.", 
+"Greenwich prepares students for healthcare roles with strong programs in public health, nursing, and social care. <br> <strong> Typical Grade Requirements </strong>: For health programs, BBC at A-level, with Biology or relevant subjects."];
         
         let images = ["https://cdn.tech.eu/uploads/2023/03/cambridge-474.jpg", "https://cdn.britannica.com/03/117103-050-F4C2FC83/view-University-of-Oxford-England-Oxfordshire.jpg", "https://www.ucl.ac.uk/prospectivestudents/undergraduate/sites/prospective_students_undergraduate/files/teaser-card-external/portico_welcome_sized.png", 
         "https://accommodationforstudents.com/cdn-cgi/image/f=auto,q=85,w=1200,h=600,fit=cover/https://images.accommodationforstudents.com/website/university-guides/gb/imperial-college-london/uni.jpg",   "https://www.ed.ac.uk/sites/default/files/styles/panel_breakpoints_theme_uoe_mobile_1x/public/thumbnails/image/cam_about-us-1_old_college_0.jpg?itok=jEHMEuJe", 
         "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/45/1c/9d/university-of-glasgow.jpg?w=1200&h=1200&s=1", 
-        "https://oidigitalinstitute.com/wp-content/uploads/2023/04/AdobeStock_498150538-University-of-Bristol-2-scaled.jpeg"];
+        "https://oidigitalinstitute.com/wp-content/uploads/2023/04/AdobeStock_498150538-University-of-Bristol-2-scaled.jpeg",
+        "https://www.sheffield.ac.uk/sites/default/files/styles/two_thirds_2x/public/2024-08/29993.jpg?h=c043925e&itok=tR2ELqgy",
+        "https://www.britishcouncil.or.th/sites/default/files/exeter.png",
+"https://i.guim.co.uk/img/media/44a6cce8f083537ff96ac9336f09699898f94c48/0_80_1199_719/master/1199.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=a76e2a0656ebf204d05d6e040fcbd40f", 
+"https://i.guim.co.uk/img/media/5fa0885fef8e5687e1b96a7fc26ecf4b2d119d79/0_190_2852_1711/master/2852.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMjAucG5n&s=9ab292cd8ef0947c36696bf85ea9978f", 
+        "https://www.ncuk.ac.uk/wp-content/uploads/2023/10/University-of-Liverpool-Image-Gallery-2.jpg", 
+        "https://media.studentcrowd.net/w852-h568-q90-cfill/index-data/20210602131246-sussex-2.jpg", 
+        "https://smapse.com/storage/2018/11/converted/825_585_screenshot-6-3.png",
+        "https://eu-assets.simpleview-europe.com/manchester2016-study/imageresizer/?image=%2Fdbimgs%2FUoM%205.jpg&action=Background_Overlay",
+        "https://www.swiftnlifteducation.com/wp-content/uploads/2024/08/66d08ac656da7-ugc-announcement-university-of-southampton-to-open-gurugram-campus-in-2025-under-new-regulation-295044866-16x9-1.jpg",
+        "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/411000/411748-East-Sussex-County.jpg",
+        "https://miro.medium.com/v2/resize:fit:2000/1*bZEGERZ_q69MEN593Y95rQ.jpeg", 
+        "https://pxl-sunderlandacuk.terminalfour.net/fit-in/1209x680/filters:quality(75)/filters:format(webp)/prod01/www-site-cdn-pxl-media/images/external-websites/www/homepage-loops/Christmas-Night-Loop-2021.jpg",
+        "https://images.shiksha.com/mediadata/images/1538110096phpOcpuQZ.jpeg", 
+        "https://educationconcern.com/wp-content/uploads/2021/11/university-of-northampton.jpg", 
+        "https://www.chester.ac.uk/media/media/photography/photography/our-locations/RS23046_QP-Aerial-10-scr.jpeg", 
+        "https://www.uea.ac.uk/f/185167/2976x1674/dc6a17f39c/uea-gen-026_dave-gutridge-_the-photographic-unit_23233.jpg",
+        "https://edvoy-strapi-assets.s3.ap-south-1.amazonaws.com/University_of_South_Wales_Cardiff_Campus_b0ec1eeff8.jpg",
+        "https://lincolnshire.org/wp-content/uploads/2013/01/lincoln-university.webp", 
+        "https://www.torriseconsultancy.com/wp-content/uploads/2017/11/FI-Why-Study-at-The-University-of-Buckingham.jpg", 
+        "https://static.sliit.lk/wp-content/uploads/2017/12/sliit-international-section-transfer-options-Hertfordshire-university.jpg", 
+        "https://www.gre.ac.uk/__data/assets/image/0030/119649/gr-aerial-04a.jpg"];
         
-        let output = "";
+        let output = "<ul>";
         if (score <= 3600 && score >= 3000 ) {
-        	competitiveness = "With a UCAT score of over 3000, you are in the top percentile of students who took the UCAT and can compete with the best medical students in the country. Consider:<li>";
-			for (let i = 0; i < 7; i++) {
-            	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
+        	competitiveness = "With a UCAT score of over 3000, you are in the top percentile of students who took the UCAT and can compete with the best medical students in the country. Consider:";
+            for (let i = 0; i < 7; i++) {
+            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
             }
         } else  if (score > 3600) {
         	competitiveness = "chill bruh";
             output = "";
-		} else if (score >= 2800) {
-            competitiveness = "With a UCAT score between 2800-3000, you're still very competitive. Consider these universities:<li>";
-            for (let i = 8; i < 15; i++) {
-            	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
-            }
-        } else if (score >= 2600) {
-            competitiveness = "With a UCAT score between 2600-2800, you are competitive at several well-regarded schools. Consider:<li>";
-            for (let i = 8; i < 15; i++) {
-            	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
+		} else if (score >= 2700) {
+            competitiveness = "With a UCAT score between 2700-3000, you're still very competitive. Consider these universities:";
+            for (let i = 7; i < 14; i++) {
+            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
             }
         } else if (score >= 2400) {
-            competitiveness = "With a UCAT score between 2400-2600, you can still apply to some good universities, though competition is higher. Consider:<li>";
-            for (let i = 8; i < 15; i++) {
-            	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
+            competitiveness = "With a UCAT score between 2400-2700, you are competitive at several well-regarded schools. Consider:";
+            for (let i = 14; i < 21; i++) {
+            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
             }
-        } else if (score >= 2200) {
-            competitiveness = "With a UCAT score between 2200-2400, you may face challenges at some top universities, but some still consider lower scores. Try:<li>";
-            for (let i = 8; i < 15; i++) {
-            	output += "<strong>" + universities[i] + "</strong>" + "<br>" + description[i] + "<li>"; 
+        } else if (score >= 2000) {
+            competitiveness = "With a UCAT score between 2000-2400, you can still apply to some good universities, though competition is higher. Consider:";
+            for (let i = 21; i < 28; i++) {
+            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
             }
         } else if (score >= 1200) {
-            competitiveness = "With a UCAT score under 2200, many top universities are very difficult to get into. However, there are alternative routes:<li>";
-            output += "Consider retaking the UCAT for a higher score.<li>";
-            output += "Explore graduate-entry medicine or international medical schools.<li>";
-            output += "Look for universities with <strong>contextual admissions criteria</strong>.<li>";
-            output += "Explore <strong>foundation year programs</strong> at some universities.<li>";
+            competitiveness = "With a UCAT score under 2000, many top universities are very difficult to get into. However, there are alternative routes:";
+            output += "<li>Consider retaking the UCAT for a higher score.</li>";
+            output += "<li>Explore graduate-entry medicine or international medical schools.</li>";
+            output += "<li>Look for universities with <strong>contextual admissions criteria</strong>.</li>";
+            output += "<li>Explore <strong>foundation year programs</strong> at some universities.</li>";
         } else if (score < 1200) {
         	competitiveness = "😹";
             output = "🙏🙏🙏🙏";
 		}
         
+        output += "</ul>"
+        
         document.getElementById("output_here").innerHTML = competitiveness + output;
     } else {
-        document.getElementById("output_here").innerHTML = "Please enter a valid UCAT score.";
+        document.getElementById("output_here").innerHTML = "Enter a valid UCAT score.";
     }
 }
 </script>
