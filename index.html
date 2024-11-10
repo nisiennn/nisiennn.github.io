@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
-<body>
-<div class="title">
-	<title>UCAT University Suggester</title>
-    <header>UCAT University Suggester<br></header>
-    <p><br><br>Produced By Nisien Gurung</p>
+<head>
+    <title>UCAT University Suggester</title>
     <link rel="stylesheet" href="css/styles.css">
-</div>
-
-<h6>‎</h6>
-
-<div class="intro">
-    <h2>What is a UCAT University Suggester?</h2><br>
-    <p1>A program designed to show you some of the top 7 universities you should be looking at according to your UCAT score. </p1>
-</div>
-
-<div class="divider">
-    <h6>‎</h6>
-</div>
-
-<div class="intro2">
-    <h2>What is the UCAT?</h2><br>
-    <p2>The UCAT is an electronic examination which includes multiple choice questions for students applying for medical or dental degrees in universities. 36 Universities across the UK take in scores from the SUAT to assist them in selecting applicants, including Oxford, Imperial and Cambridge. The exam is scored between <strong> 1200-3600 </strong> where students get a score out of 900 in 4 different criterias. A really good UCAT score can heavily assist students in aquiring the top universities in the country for medicine. For further information visit the </p2>
-    <a href="https://www.ucat.ac.uk/">UCAT Website<br><br></a>
-</div>
-
-<label for="score">Enter UCAT Score:</label>
-<input type="text" id="score" name="score"><br><br>
-<button onclick="findUniversities()">Find Universities</button>
-
-<p3 id="output_here"></p3>
-
-<script>
-function findUniversities() {
-    let score = document.getElementById("score").value;
-    score = parseInt(score);
+</head>
+<body>
+    <header class="title">
+        <div class="title-container">
+            <h1>UCAT University Suggestor</h1>
+            <p>Produced by Nisien Gurung</p>
+        </div>
+    </header>
+    <div class="line"></div>
+    <main>
+        <section class="intro">
+            <h2>What is a UCAT University Suggester?</h2><br>
+            <p>A program designed to show the top 7 universities you should consider based on your UCAT score.</p>
+        </section>
+        <div class='divider'></div>
+        <section class="intro2">
+            <h2>What is the UCAT?</h2><br>
+            <div class="UCATexplanation">
+                <p>The UCAT is an electronic examination which includes multiple choice questions for students applying for medical or dental degrees in universities. 36 Universities across the UK take in scores from the SUAT to assist them in selecting applicants, including Oxford, Imperial and Cambridge. The exam is scored between <strong> 1200 - 3600</strong> where students get a score out of 900 in 4 different criterias. A really good UCAT score can heavily assist students in aquiring the top universities in the country for medicine. For further information visit the <a href="https://www.ucat.ac.uk/">UCAT Website</a></p>
+            </div>
+        </section>
+        <div class='divider'></div>
+        <section class="scoreEntry">
+            <label for="score"><strong>Enter UCAT Score:</strong></label>
+            <input type="text" id="score" name="score"><br><br>
+            <button onclick="findUniversities()">Find Universities</button>
+        </section>
+        <div id="output_here"></div>
+    </main>
+    <script>
+        function findUniversities() {
+            let score = document.getElementById("score").value;
+            score = parseInt(score);
 
     if (Number.isInteger(score) && score >= 0) {
         let universities = ["University of Cambridge", "University of Oxford", "University College London (UCL)", "Imperial College London", "University of Edinburgh", "University of Glasgow", "University of Bristol", "University of Sheffield", "University of Exeter", "University of Warwick", "University of Leicester", "University of Liverpool", "University of St. Andrews", "Kings College London", "University of Manchester", "University of Southampton", "Brighton and Sussex Medical School", "University of Keele", "University of Sunderland", "University of Plymouth", "University of Northampton", "University of Chester", "University of Norwich", "University of South Wales", "University of Lincoln", "University of Buckingham (Private)", "University of Hertfordshire", "University of Greenwich"];
@@ -94,46 +95,44 @@ function findUniversities() {
         "https://static.sliit.lk/wp-content/uploads/2017/12/sliit-international-section-transfer-options-Hertfordshire-university.jpg", 
         "https://www.gre.ac.uk/__data/assets/image/0030/119649/gr-aerial-04a.jpg"];
         
-        let output = "<ul>";
-        if (score <= 3600 && score >= 3000 ) {
-        	competitiveness = "With a UCAT score of over 3000, you are in the top percentile of students who took the UCAT and can compete with the best medical students in the country. Consider:";
+        let output = "";
+            if (score <= 3600 && score >= 3000 ) {
+            competitiveness = "<p class='competition'>With a UCAT score of over 3000, you are in the top percentile of students who took the UCAT and can compete with the best medical students in the country. Consider:</p><br></div>";
             for (let i = 0; i < 7; i++) {
-            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
+            	output += "<div class='uni'><strong><h1>" + universities[i] + "</h1></strong><br>" + "<p><img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 500px; height: auto; margin-top: 10px;'/></p><br><p>" + description[i] + "</p><br><br><div class='divider'></div></div>"; 
             }
         } else  if (score > 3600) {
         	competitiveness = "chill bruh";
             output = "";
 		} else if (score >= 2700) {
-            competitiveness = "With a UCAT score between 2700-3000, you're still very competitive. Consider these universities:";
+            competitiveness = "<p class='competition'>With a UCAT score between 2700-3000, you're still very competitive. Consider these universities:Consider:</p><br></div>";
             for (let i = 7; i < 14; i++) {
-            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
+            	output += "<div class='uni'><strong><h1>" + universities[i] + "</h1></strong><br>" + "<p><img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 500px; height: auto; margin-top: 10px;'/></p><br><p>" + description[i] + "</p><br><br><div class='divider'></div></div>"; 
             }
         } else if (score >= 2400) {
-            competitiveness = "With a UCAT score between 2400-2700, you are competitive at several well-regarded schools. Consider:";
+            competitiveness = "<p class='competition'>With a UCAT score between 2400-2700, you are competitive at several well-regarded schools. Consider:</p><br></div>";
             for (let i = 14; i < 21; i++) {
-            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
+            	output += "<div class='uni'><strong><h1>" + universities[i] + "</h1></strong><br>" + "<p><img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 500px; height: auto; margin-top: 10px;'/></p><br><p>" + description[i] + "</p><br><br><div class='divider'></div></div>"; 
             }
         } else if (score >= 2000) {
-            competitiveness = "With a UCAT score between 2000-2400, you can still apply to some good universities, though competition is higher. Consider:";
+            competitiveness = "<p class='competition'>With a UCAT score between 2000-2400, you can still apply to some good universities, though competition is higher. Consider:</p><br></div>";
             for (let i = 21; i < 28; i++) {
-            	output += "<li><strong>" + universities[i] + "</strong><br>" + "<img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 300px; height: auto; margin-top: 10px;'/><br>" + description[i] + "</li><br>"; 
+            	output += "<div class='uni'><strong><h1>" + universities[i] + "</h1></strong><br>" + "<p><img src= '" + images[i] + "'  alt='" + universities[i] + "' style='width: 500px; height: auto; margin-top: 10px;'/></p><br><p>" + description[i] + "</p><br><br><div class='divider'></div></div>"; 
             }
         } else if (score >= 1200) {
-            competitiveness = "With a UCAT score under 2000, many top universities are very difficult to get into. However, there are alternative routes:";
-            output += "<li>Consider retaking the UCAT for a higher score.</li>";
-            output += "<li>Explore graduate-entry medicine or international medical schools.</li>";
-            output += "<li>Look for universities with <strong>contextual admissions criteria</strong>.</li>";
-            output += "<li>Explore <strong>foundation year programs</strong> at some universities.</li>";
+            competitiveness = "<p class='lowUni'>With a UCAT score under 2000, many top universities are very difficult to get into. However, there are alternative routes:</p>";
+            output += "<div class='lowOutput'><li>Consider retaking the UCAT for a higher score.</li></div>";
+            output += "<div class='lowOutput'><li>Explore graduate-entry medicine or international medical schools.</li></div>";
+            output += "<div class='lowOutput'><li>Look for universities with <strong>contextual admissions criteria</strong>.</li></div>";
+            output += "<div class='lowOutput'><li>Explore <strong>foundation year programs</strong> at some universities.</li></div>";
         } else if (score < 1200) {
         	competitiveness = "😹";
             output = "🙏🙏🙏🙏";
 		}
         
-        output += "</ul>"
-        
-        document.getElementById("output_here").innerHTML = competitiveness + output;
+        document.getElementById("output_here").innerHTML = competitiveness + "<br>" + output;
     } else {
-        document.getElementById("output_here").innerHTML = "Enter a valid UCAT score.";
+        document.getElementById("output_here").innerHTML = "<p class=invalid'>Enter a valid UCAT score.</p>";
     }
 }
 </script>
