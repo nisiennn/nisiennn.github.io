@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    border: 0;
+}
+
+.title {
+    width: 100%;
+    max-width: 10000px;
+    height: 40vh;
+    background-image: url('https://www.blackstonetutors.com/wp-content/uploads/2021/05/BG-2-1.png');
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 10vw;
+    font-family:candara;
+    font-size: 5vh;
+}
+
+.title p {
+    font-family: candara;
+    color: rgb(206, 176, 99);
+    justify-content: left;
+    font-size: 2vh;
+}
+
+h6 {
+    background-color: rgb(197, 163, 77);
+}
+
+.divider h6 {
+    font-size: 1px;
+    width: 90vw;
+    margin: 50px;
+}
+
+.intro {
+    justify-content: left;
+    padding: 50px;
+}
+
+.intro h2 {
+    font-family: verdana;
+}
+
+.intro p1 {
+    font-family: courier;
+}
+
+.intro2 {
+    justify-content: left;
+    padding: 50px;
+}
+
+.intro2 h2 {
+    font-family: verdana;
+}
+
+.intro2 p2 {
+    font-family: courier;
+    border-block-start:rgb(197, 163, 77)
+}
+
